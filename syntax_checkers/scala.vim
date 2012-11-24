@@ -24,7 +24,7 @@ if !exists("g:syntastic_scala_options")
 endif
 
 function! SyntaxCheckers_scala_GetLocList()
-    let makeprg = 'scala '. g:syntastic_scala_options .' '.  shellescape(expand('%')) . ' /dev/null'
+    let makeprg = 'scalac -Ystop-after:parser '. g:syntastic_scala_options .' '.  shellescape(expand('%'))
 
     let errorformat = '%f\:%l: %trror: %m'
 
